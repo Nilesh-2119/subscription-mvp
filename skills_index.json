@@ -54,8 +54,14 @@
     "description": "\"You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.\""
   },
   {
-    "id": "brand-guidelines",
-    "path": "skills/brand-guidelines",
+    "id": "brand-guidelines-community",
+    "path": "skills/brand-guidelines-community",
+    "name": "brand-guidelines",
+    "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply."
+  },
+  {
+    "id": "brand-guidelines-anthropic",
+    "path": "skills/brand-guidelines-anthropic",
     "name": "brand-guidelines",
     "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply."
   },
@@ -96,8 +102,8 @@
     "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks."
   },
   {
-    "id": "docx",
-    "path": "skills/docx",
+    "id": "docx-official",
+    "path": "skills/docx-official",
     "name": "docx",
     "description": "\"Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks\""
   },
@@ -138,8 +144,14 @@
     "description": "Stage, commit, and push git changes with conventional commit messages. Use when user wants to commit and push changes, mentions pushing to remote, or asks to save and push their work. Also activates when user says \"push changes\", \"commit and push\", \"push this\", \"push to github\", or similar git workflow requests."
   },
   {
-    "id": "internal-comms",
-    "path": "skills/internal-comms",
+    "id": "internal-comms-anthropic",
+    "path": "skills/internal-comms-anthropic",
+    "name": "internal-comms",
+    "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.)."
+  },
+  {
+    "id": "internal-comms-community",
+    "path": "skills/internal-comms-community",
     "name": "internal-comms",
     "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.)."
   },
@@ -168,8 +180,8 @@
     "description": "Use this skill to query your Google NotebookLM notebooks directly from Claude Code for source-grounded, citation-backed answers from Gemini. Browser automation, library management, persistent auth. Drastically reduced hallucinations through document-only responses."
   },
   {
-    "id": "pdf",
-    "path": "skills/pdf",
+    "id": "pdf-official",
+    "path": "skills/pdf-official",
     "name": "pdf",
     "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale."
   },
@@ -186,8 +198,8 @@
     "description": "Complete browser automation with Playwright. Auto-detects dev servers, writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, check responsive design, validate UX, test login flows, check links, automate any browser task. Use when user wants to test websites, automate browser interactions, validate web functionality, or perform any browser-based testing."
   },
   {
-    "id": "pptx",
-    "path": "skills/pptx",
+    "id": "pptx-official",
+    "path": "skills/pptx-official",
     "name": "pptx",
     "description": "\"Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks\""
   },
@@ -312,6 +324,12 @@
     "description": "Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions"
   },
   {
+    "id": "react-best-practices",
+    "path": "skills/react-best-practices",
+    "name": "vercel-react-best-practices",
+    "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements."
+  },
+  {
     "id": "verification-before-completion",
     "path": "skills/verification-before-completion",
     "name": "verification-before-completion",
@@ -322,6 +340,12 @@
     "path": "skills/web-artifacts-builder",
     "name": "web-artifacts-builder",
     "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts."
+  },
+  {
+    "id": "web-design-guidelines",
+    "path": "skills/web-design-guidelines",
+    "name": "web-design-guidelines",
+    "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\"."
   },
   {
     "id": "webapp-testing",
@@ -342,8 +366,8 @@
     "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment"
   },
   {
-    "id": "xlsx",
-    "path": "skills/xlsx",
+    "id": "xlsx-official",
+    "path": "skills/xlsx-official",
     "name": "xlsx",
     "description": "\"Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas\""
   }
