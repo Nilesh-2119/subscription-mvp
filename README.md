@@ -1,6 +1,6 @@
 # 🌌 Antigravity Awesome Skills: 626+ Agentic Skills for Claude Code, Gemini CLI, Cursor, Copilot & More
 
-> **The Ultimate Collection of 626+ Universal Agentic Skills for AI Coding Assistants — Claude Code, Gemini CLI, Codex CLI, Antigravity IDE, GitHub Copilot, Cursor, OpenCode**
+> **The Ultimate Collection of 626+ Universal Agentic Skills for AI Coding Assistants — Claude Code, Gemini CLI, Codex CLI, Antigravity IDE, GitHub Copilot, Cursor, OpenCode, AdaL**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Anthropic-purple)](https://claude.ai)
@@ -10,6 +10,7 @@
 [![Copilot](https://img.shields.io/badge/GitHub%20Copilot-VSCode-lightblue)](https://github.com/features/copilot)
 [![OpenCode](https://img.shields.io/badge/OpenCode-CLI-gray)](https://github.com/opencode-ai/opencode)
 [![Antigravity](https://img.shields.io/badge/Antigravity-DeepMind-red)](https://github.com/sickn33/antigravity-awesome-skills)
+[![AdaL](https://img.shields.io/badge/AdaL-Self--evolving%20Agent-pink)](https://github.com/HumanSignal/Adala)
 
 **Antigravity Awesome Skills** is a curated, battle-tested library of **626 high-performance agentic skills** designed to work seamlessly across all major AI coding assistants:
 
@@ -20,6 +21,7 @@
 - 🩵 **GitHub Copilot** (VSCode Extension)
 - 🟠 **Cursor** (AI-native IDE)
 - ⚪ **OpenCode** (Open-source CLI)
+- 🌸 **AdaL** (Self-evolving AI Agent)
 
 This repository provides essential skills to transform your AI assistant into a **full-stack digital agency**, including official capabilities from **Anthropic**, **OpenAI**, **Google**, **Supabase**, and **Vercel Labs**.
 
@@ -89,6 +91,7 @@ These skills follow the universal **SKILL.md** format and work with any AI codin
 | **Antigravity** | IDE  | `(Agent Mode) Use skill...`       | `.agent/skills/`  |
 | **Cursor**      | IDE  | `@skill-name (in Chat)`           | `.cursor/skills/` |
 | **Copilot**     | Ext  | `(Paste content manually)`        | N/A               |
+| **AdaL**        | Agent | `(Agent Mode) Use skill...`       | `.agent/skills/`  |
 
 > [!TIP]
 > **Universal Path**: We recommend cloning to `.agent/skills/`. Most modern tools (Antigravity, recent CLIs) look here by default.
@@ -100,7 +103,7 @@ These skills follow the universal **SKILL.md** format and work with any AI codin
 
 ---
 
-Whether you are using **Gemini CLI**, **Claude Code**, **Codex CLI**, **Cursor**, **GitHub Copilot**, **Antigravity**, or **OpenCode**, these skills are designed to drop right in and supercharge your AI agent.
+Whether you are using **Gemini CLI**, **Claude Code**, **Codex CLI**, **Cursor**, **GitHub Copilot**, **Antigravity**, **OpenCode**, or **AdaL**, these skills are designed to drop right in and supercharge your AI agent.
 
 This repository aggregates the best capabilities from across the open-source community, transforming your AI assistant into a full-stack digital agency capable of Engineering, Design, Security, Marketing, and Autonomous Operations.
 
@@ -132,7 +135,7 @@ We have moved the full skill registry to a dedicated catalog to keep this README
 
 ## Installation
 
-To use these skills with **Claude Code**, **Gemini CLI**, **Codex CLI**, **Cursor**, **Antigravity**, or **OpenCode**:
+To use these skills with **Claude Code**, **Gemini CLI**, **Codex CLI**, **Cursor**, **Antigravity**, **OpenCode**, or **AdaL**:
 
 ### Option A: npx (recommended)
 
