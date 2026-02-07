@@ -1,0 +1,142 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  CUSTOMER
+  VENDOR
+  RIDER
+  ADMIN
+}
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  passwordHash  String
+  fullName      String
+  role          Role      @default(CUSTOMER)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  vendorProfile   VendorProfile?
+  riderProfile    RiderProfile?
+  customerProfile CustomerProfile?
+
+  @@map("users")
+}
+
+model VendorProfile {
+  id             String   @id @default(uuid())
+  userId         String   @unique
+  businessName   String
+  phone          String
+  address        String?
+  fssaiLicense   String?
+  isVerified     Boolean  @default(false)
+  
+  user           User     @relation(fields: [userId], references: [id])
+  menuItems      MenuItem[]
+  subscriptions  Subscription[]
+  orders         Order[]
+  weeklyMenus    WeeklyMenu[]
+  
+  @@map("vendor_profiles")
+}
+
+model RiderProfile {
+  id             String   @id @default(uuid())
+  userId         String   @unique
+  phone          String
+  vehicleNumber  String?
+  licenseNumber  String?
+  isVerified     Boolean  @default(false)
+  status         String   @default("OFFLINE") // OFFLINE, ONLINE, BUSY
+
+  user           User     @relation(fields: [userId], references: [id])
+
+  @@map("rider_profiles")
+}
+
+model CustomerProfile {
+  id             String   @id @default(uuid())
+  userId         String   @unique
+  phone          String?
+  preferences    Json?    // Store dietary preferences, etc.
+
+  user           User     @relation(fields: [userId], references: [id])
+  subscriptions  Subscription[]
+
+  orders         Order[]
+  
+  @@map("customer_profiles")
+}
+
+model MenuItem {
+  id          String   @id @default(uuid())
+  vendorId    String
+  name        String
+  description String?
+  price       Decimal
+  imageUrl    String?
+  isAvailable Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  vendor      VendorProfile @relation(fields: [vendorId], references: [id])
+
+  @@map("menu_items")
+}
+
+model Subscription {
+  id          String   @id @default(uuid())
+  customerId  String
+  vendorId    String
+  startDate   DateTime
+  endDate     DateTime
+  status      String   @default("ACTIVE") // ACTIVE, EXPIRED, PAUSED
+
+  customer    CustomerProfile @relation(fields: [customerId], references: [id])
+  vendor      VendorProfile   @relation(fields: [vendorId], references: [id])
+
+  @@map("subscriptions")
+}
+
+model Order {
+  id          String   @id @default(uuid())
+  customerId  String
+  vendorId    String
+  status      String   @default("PENDING") // PENDING, ACCEPTED, REJECTED, COMPLETED
+  type        String   // TRIAL, SUBSCRIPTION, ONE_TIME
+  items       Json     // Store items snapshot
+  totalAmount Decimal
+  date        DateTime // For single orders, this is the delivery date
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  customer    CustomerProfile @relation(fields: [customerId], references: [id])
+  vendor      VendorProfile   @relation(fields: [vendorId], references: [id])
+
+  @@map("orders")
+}
+
+model WeeklyMenu {
+  id        String   @id @default(uuid())
+  vendorId  String
+  day       String   // MONDAY, TUESDAY...
+  lunch     String
+  dinner    String?
+  isVeg     Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  vendor    VendorProfile @relation(fields: [vendorId], references: [id])
+
+  @@unique([vendorId, day])
+  @@map("weekly_menus")
+}

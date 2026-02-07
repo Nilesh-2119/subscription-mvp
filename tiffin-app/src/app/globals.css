@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  /* Tiffin Brand Colors (Swiggy-inspired) */
+  --primary: #FC8019;
+  --primary-foreground: #FFFFFF;
+  
+  --secondary: #2B2F36;
+  --secondary-foreground: #FFFFFF;
+  
+  --accent: #FFF5ED;
+  --accent-foreground: #FC8019;
+
+  --background: #FFFFFF;
+  --foreground: #171717;
+  
+  --muted: #F3F4F6;
+  --muted-foreground: #6B7280;
+  
+  --card: #FFFFFF;
+  --card-foreground: #171717;
+  
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #FC8019;
+  
+  --radius: 0.75rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0F172A;
+    --foreground: #F8FAFC;
+    
+    --primary: #FC8019;
+    --primary-foreground: #FFFFFF;
+    
+    --secondary: #1E293B;
+    --secondary-foreground: #F8FAFC;
+    
+    --accent: #1E293B;
+    --accent-foreground: #FC8019;
+    
+    --muted: #1E293B;
+    --muted-foreground: #94A3B8;
+    
+    --card: #1E293B;
+    --card-foreground: #F8FAFC;
+    
+    --border: #334155;
+    --input: #334155;
+    --ring: #FC8019;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+}
