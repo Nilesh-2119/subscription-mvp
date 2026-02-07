@@ -48,10 +48,10 @@ export declare class VendorController {
         vendorId: string;
     }>;
     getWeeklyMenu(req: any): Promise<{
+        day: string;
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        day: string;
         vendorId: string;
         lunch: string;
         dinner: string | null;
@@ -60,10 +60,10 @@ export declare class VendorController {
     updateWeeklyMenu(req: any, data: {
         days: any[];
     }): Promise<{
+        day: string;
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        day: string;
         vendorId: string;
         lunch: string;
         dinner: string | null;

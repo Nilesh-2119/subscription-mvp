@@ -48,10 +48,10 @@ export declare class VendorService {
         vendorId: string;
     }>;
     getWeeklyMenu(vendorId: string): Promise<{
+        day: string;
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        day: string;
         vendorId: string;
         lunch: string;
         dinner: string | null;
@@ -63,10 +63,10 @@ export declare class VendorService {
         dinner?: string;
         isVeg?: boolean;
     }[]): Promise<{
+        day: string;
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        day: string;
         vendorId: string;
         lunch: string;
         dinner: string | null;
@@ -136,10 +136,10 @@ export declare class VendorService {
             vendorId: string;
         }[];
         weeklyMenus: {
+            day: string;
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            day: string;
             vendorId: string;
             lunch: string;
             dinner: string | null;
