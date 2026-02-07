@@ -7,10 +7,17 @@ export class PaymentsService {
     private razorpay: Razorpay;
 
     constructor() {
-        this.razorpay = new Razorpay({
-            key_id: process.env.RAZORPAY_KEY_ID || '',
-            key_secret: process.env.RAZORPAY_KEY_SECRET || '',
-        });
+        const key_id = process.env.RAZORPAY_KEY_ID;
+        const key_secret = process.env.RAZORPAY_KEY_SECRET;
+
+        if (key_id && key_secret) {
+            this.razorpay = new Razorpay({
+                key_id,
+                key_secret,
+            });
+        } else {
+            console.warn('WARNING: RAZORPAY_KEY_ID or RAZORPAY_KEY_SECRET is missing. Payment features will not work.');
+        }
     }
 
     async createOrder(amount: number, currency: string = 'INR', receipt?: string) {
@@ -20,6 +27,9 @@ export class PaymentsService {
             receipt: receipt || `order_${Date.now()}`,
         };
 
+        if (!this.razorpay) {
+            throw new Error('Razorpay is not initialized. Check environment variables.');
+        }
         try {
             const order = await this.razorpay.orders.create(options);
             return order;
