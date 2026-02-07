@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
 import { Header } from '@/components/layout/Header';
@@ -15,7 +15,7 @@ declare global {
     }
 }
 
-export default function CheckoutPage() {
+function CheckoutContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const { user } = useAuthStore();
@@ -520,5 +520,13 @@ export default function CheckoutPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function CheckoutPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-gray-100 flex items-center justify-center">Loading checkout...</div>}>
+            <CheckoutContent />
+        </Suspense>
     );
 }
