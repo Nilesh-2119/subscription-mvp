@@ -7,5 +7,16 @@ async function bootstrap() {
     app.enableCors();
     await app.listen(process.env.PORT ?? 4000, '0.0.0.0');
 }
-bootstrap();
+if (process.env.VERCEL) {
+}
+else {
+    bootstrap();
+}
+exports.default = async (req, res) => {
+    const app = await core_1.NestFactory.create(app_module_1.AppModule);
+    app.enableCors();
+    await app.init();
+    const instance = app.getHttpAdapter().getInstance();
+    return instance(req, res);
+};
 //# sourceMappingURL=main.js.map
